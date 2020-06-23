@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PopPics</title>
+</head>
+
+<body>
+  <script>
+    let url = "https://commons.wikimedia.org/w/api.php?";
+
+    const params = {
+      action: "query",
+      list: "logevents",
+      letype: "upload",
+      leprop: "title|timestamp|id",
+      lelimit: "5",
+      leuser: "Renek78",
+      format: "json",
+      origin: "*"
+    };
+
+    Object.keys(params).forEach(function (key) { url += "&" + key + "=" + params[key]; });
+
+    console.log(url);
+    fetch(url)
+      .then(function (response) { return response.json(); })
+      .then(function (response) { console.log(response); })
+      .catch(function (error) { console.log(error); });
+  </script>
+</body>
+
+</html>
