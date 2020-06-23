@@ -9,13 +9,14 @@
 
 <body>
   <script>
+async function getPics(){
     let url = "https://commons.wikimedia.org/w/api.php?";
 
     const params = {
       action: "query",
       list: "logevents",
       letype: "upload",
-      leprop: "title|timestamp|id",
+      leprop: "title|timestamp|ids",
       lelimit: "5",
       leuser: "Renek78",
       format: "json",
@@ -23,12 +24,30 @@
     };
 
     Object.keys(params).forEach(function (key) { url += "&" + key + "=" + params[key]; });
-
     console.log(url);
+
     fetch(url)
-      .then(function (response) { return response.json(); })
-      .then(function (response) { console.log(response); })
-      .catch(function (error) { console.log(error); });
+      .then(response => response.json())
+      .then(response => { console.log(response.query.logevents); })
+      .catch(error => { console.log(error); });
+
+
+
+    // const response = await fetch(url);
+    // return await response.json();
+
+}
+getPics();
+    // async function asyncCall() {
+    //   console.log('calling');
+    //   const result = await getPics();
+    //   // console.log(result);
+    //   return result;
+    //   // expected output: 'resolved'
+    // }
+
+    // let firstValue = asyncCall().then(response => console.log(response));
+
   </script>
 </body>
 
