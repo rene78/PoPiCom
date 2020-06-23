@@ -9,35 +9,33 @@
 
 <body>
   <script>
-async function getPics(){
-    let url = "https://commons.wikimedia.org/w/api.php?";
+    async function getPics() {
+      let url = "https://commons.wikimedia.org/w/api.php?";
 
-    const params = {
-      action: "query",
-      list: "logevents",
-      letype: "upload",
-      leprop: "title|timestamp|ids",
-      lelimit: "5",
-      leuser: "Renek78",
-      format: "json",
-      origin: "*"
-    };
+      const params = {
+        action: "query",
+        list: "logevents",
+        letype: "upload",
+        leprop: "title|timestamp|ids", //what type of data to return
+        lelimit: "5", //number of pictures to return. Max is 500
+        leuser: "Renek78", //user from whom to get picture data
+        format: "json", //format of returned file
+        origin: "*" //CORS
+      };
 
-    Object.keys(params).forEach(function (key) { url += "&" + key + "=" + params[key]; });
-    console.log(url);
+      Object.keys(params).forEach(function (key) { url += "&" + key + "=" + params[key]; });
+      console.log(url);
 
-    fetch(url)
-      .then(response => response.json())
-      .then(response => { console.log(response.query.logevents); })
-      .catch(error => { console.log(error); });
+      fetch(url)
+        .then(response => response.json())
+        .then(response => { console.log(response.query.logevents); })
+        .catch(error => { console.log(error); });
 
+      // const response = await fetch(url);
+      // return await response.json();
 
-
-    // const response = await fetch(url);
-    // return await response.json();
-
-}
-getPics();
+    }
+    getPics();
     // async function asyncCall() {
     //   console.log('calling');
     //   const result = await getPics();
