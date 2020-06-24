@@ -10,8 +10,8 @@
 <body>
   <script src="examples.js"></script>
   <script>
-    
-    function getPics() {
+
+    function getPics(input) {
       let picNames = [];
       let url = "https://commons.wikimedia.org/w/api.php?";
 
@@ -21,7 +21,7 @@
         letype: "upload",
         leprop: "title", //what type of data to return. other options: "title|timestamp|ids"
         lelimit: "500", //number of pictures to return. Max is 500
-        leuser: "Renek78", //user from whom to get picture data
+        leuser: input, //user from whom to get picture data
         format: "json", //format of returned file
         origin: "*" //CORS
       };
@@ -43,7 +43,6 @@
             //if returned json has a key named "continue", write value to "params.lecontinue" and do another fetch
             if (response.continue != undefined) {
               params.lecontinue = response.continue.lecontinue;//update lecontinue in order to fetch remaining entries
-              // createURL();
               console.log(params);
               fetchElements();
             } else {
@@ -55,12 +54,12 @@
       }
 
       const getPicsObj = {
-        createURL,
         fetchElements
       }
+      console.log(getPicsObj);
       return getPicsObj;
     }
-    const pics = getPics();
+    const pics = getPics("Renek78");
     // pics.fetchElements();
 
     function getUsageCount(allPics) {
