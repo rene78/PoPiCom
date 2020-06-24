@@ -8,94 +8,60 @@
 </head>
 
 <body>
+  <script src="examples.js"></script>
   <script>
-    const demopics = {
-      "batchcomplete": "",
-      "continue": {
-        "lecontinue": "20200608111159|295782671",
-        "continue": "-||"
-      },
-      "query": {
-        "logevents": [
-          {
-            "logid": 295818389,
-            "ns": 6,
-            "title": "File:Tropicana The Residence and W Hotel in Kuala Lumpur.jpeg",
-            "pageid": 91077508,
-            "logpage": 91077508,
-            "timestamp": "2020-06-09T13:29:23Z"
-          },
-          {
-            "logid": 295818079,
-            "ns": 6,
-            "title": "File:Skyscrapers of Kuala Lumpur, Malaysia (42721121372).jpg",
-            "pageid": 91077208,
-            "logpage": 91077208,
-            "timestamp": "2020-06-09T13:17:29Z"
-          },
-          {
-            "logid": 295782801,
-            "ns": 6,
-            "title": "File:Lamp Bear in June 2020.jpg",
-            "pageid": 91044393,
-            "logpage": 91044393,
-            "timestamp": "2020-06-08T11:17:12Z"
-          },
-          {
-            "logid": 295782674,
-            "ns": 6,
-            "title": "File:KLIA during CMCO due to Coronavirus pandemic in June 2020 04.jpg",
-            "pageid": 91044273,
-            "logpage": 91044273,
-            "timestamp": "2020-06-08T11:12:03Z"
-          },
-          {
-            "logid": 295782672,
-            "ns": 6,
-            "title": "File:KLIA during CMCO due to Coronavirus pandemic in June 2020 02.jpg",
-            "pageid": 91044271,
-            "logpage": 91044271,
-            "timestamp": "2020-06-08T11:11:59Z"
-          }
-        ]
-      }
-    }
-
+    
     function getPics() {
+      let picNames = [];
       let url = "https://commons.wikimedia.org/w/api.php?";
 
       const params = {
         action: "query",
         list: "logevents",
         letype: "upload",
-        leprop: "title|timestamp|ids", //what type of data to return
-        lelimit: "5", //number of pictures to return. Max is 500
+        leprop: "title", //what type of data to return. other options: "title|timestamp|ids"
+        lelimit: "500", //number of pictures to return. Max is 500
         leuser: "Renek78", //user from whom to get picture data
         format: "json", //format of returned file
         origin: "*" //CORS
       };
 
-      Object.keys(params).forEach(function (title) { url += "&" + title + "=" + params[title]; });
-      console.log(url);
+      function createURL() {
+        Object.keys(params).forEach(function (title) { url += "&" + title + "=" + params[title]; });
+        console.log(url);
+      }
 
-      fetch(url)
-        .then(response => response.json())
-        .then(response => { getUsageCount(response)/*console.log(response.query.logevents);*/ })
-        .catch(error => { console.log(error); });
+      function fetchElements() {
+        createURL();
+        fetch(url)
+          .then(response => response.json())
+          .then(response => {
+            //copy all the picture names into array picNames
+            for (let i = 0; i < response.query.logevents.length; i++) {
+              picNames.push(response.query.logevents[i].title);
+            }
+            //if returned json has a key named "continue", write value to "params.lecontinue" and do another fetch
+            if (response.continue != undefined) {
+              params.lecontinue = response.continue.lecontinue;//update lecontinue in order to fetch remaining entries
+              // createURL();
+              console.log(params);
+              fetchElements();
+            } else {
+              console.log(picNames);
+              // getUsageCount(response)/*console.log(response.query.logevents);*/
+            }
+          })
+          .catch(error => { console.log(error); });
+      }
 
-      // const response = await fetch(url);
-      // return await response.json();
-
+      const getPicsObj = {
+        createURL,
+        fetchElements
+      }
+      return getPicsObj;
     }
-    getPics();
-
-    // async function asyncCall() {
-    //   console.log('calling');
-    //   const result = await getPics();
-    //   // console.log(result);
-    //   return result;
-    //   // expected output: 'resolved'
-    // }
+    const pics = getPics();
+    // pics.fetchElements();
 
     function getUsageCount(allPics) {
       let url = "https://www.mediawiki.org/w/api.php?";
