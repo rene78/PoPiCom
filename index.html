@@ -56,27 +56,35 @@
       const getPicsObj = {
         fetchElements
       }
-      console.log(getPicsObj);
       return getPicsObj;
     }
     const pics = getPics("Renek78");
     // pics.fetchElements();
 
-    function getUsageCount(allPics) {
+    //-----------------------------------------------------------------------
+
+    function getUsageCount(namesArr) {
       let url = "https://www.mediawiki.org/w/api.php?";
       // let url = "https://www.mediawiki.org/w/api.php?action=query&prop=globalusage&gulimit=20&titles=File:Ferrari%20Roma%20in%20Basel.png";
 
+      //If there are more than 50 entries in namesArr --> split into subarrays of 50 elements each.
+      const namesArr2D = [];
+
+      while (namesArr.length) namesArr2D.push(namesArr.splice(0, 50));
+      console.log(namesArr2D);
+      //hier jetzt schleife und nach jedem fetch werte in titleCountArr speichern.
+/*
       const params = {
         action: "query",
         prop: "globalusage",
         format: "json", //format of returned file
-        gulimit: "20", //number of uses to return. Max is 500
+        gulimit: "500", //number of uses to return. Max is 500
         titles: getTitles(),
         origin: "*" //CORS
       };
 
       function getTitles() {
-        return allPics.query.logevents.map(entry => entry.title).join("|");
+        return namesArr.join("|");
       }
 
       Object.keys(params).forEach(function (title) { url += "&" + title + "=" + params[title]; });
@@ -86,8 +94,22 @@
         .then(response => response.json())
         .then(response => { console.log(response); })
         .catch(error => { console.log(error); });
+        */
     }
-    // getUsageCount();
+    getUsageCount(demopicsArr57Entries);
+
+    function extractTitleAndCount(usageCountObj) {
+      const fileCount = Object.keys(usageCountObj.query.pages).length;
+      const titleCountArr = [];
+
+      for (let i = 0; i < fileCount; i++) {
+        const title = Object.values(usageCountObj.query.pages)[i].title;
+        const guLength = (Object.values(usageCountObj.query.pages)[i].globalusage).length;
+        titleCountArr.push({ title: title, count: guLength });
+      }
+      console.log(titleCountArr);
+    }
+    // extractTitleAndCount(usageCountObj);
   </script>
 </body>
 
