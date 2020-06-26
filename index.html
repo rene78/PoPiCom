@@ -14,21 +14,22 @@
     function getPics(input) {
       let picNames = [];
       let url = "https://commons.wikimedia.org/w/api.php?";
-
+      //docs: https://www.mediawiki.org/wiki/API:Allimages
       const params = {
         action: "query",
-        list: "logevents",
+        list: "allimages",
         letype: "upload",
-        leprop: "title", //what type of data to return. other options: "title|timestamp|ids"
-        lelimit: "500", //number of pictures to return. Max is 500
-        leuser: input, //user from whom to get picture data
+        aiuser: input, //user from whom to get picture data
+        aisort: "timestamp", //sort according to date
+        ailimit: "500", //number of pictures to return. Max is 500
+        aiprop: "", //what type of data to return. keep empty to return the bare minimum
         format: "json", //format of returned file
         origin: "*" //CORS
       };
 
       function createURL() {
         Object.keys(params).forEach(function (title) { url += "&" + title + "=" + params[title]; });
-        console.log(url);
+        console.log(url); ////https://commons.wikimedia.org/w/api.php?action=query&list=allimages&aiuser=Renek78&aisort=timestamp&ailimit=500&aiprop=
       }
 
       function fetchElements() {
@@ -37,79 +38,84 @@
           .then(response => response.json())
           .then(response => {
             //copy all the picture names into array picNames
-            for (let i = 0; i < response.query.logevents.length; i++) {
-              picNames.push(response.query.logevents[i].title);
+            for (let i = 0; i < response.query.allimages.length; i++) {
+              picNames.push(response.query.allimages[i].title);
             }
             //if returned json has a key named "continue", write value to "params.lecontinue" and do another fetch
             if (response.continue != undefined) {
-              params.lecontinue = response.continue.lecontinue;//update lecontinue in order to fetch remaining entries
+              params.aicontinue = response.continue.aicontinue;//update lecontinue in order to fetch remaining entries
               console.log(params);
               fetchElements();
             } else {
               console.log(picNames);
-              // getUsageCount(response)/*console.log(response.query.logevents);*/
+              // getUsageCount(response)/*console.log(response.query.allimages);*/
             }
           })
           .catch(error => { console.log(error); });
       }
 
       const getPicsObj = {
+        createURL,
         fetchElements
       }
       return getPicsObj;
     }
     const pics = getPics("Renek78");
     // pics.fetchElements();
+    // pics.createURL();
 
     //-----------------------------------------------------------------------
 
     function getUsageCount(namesArr) {
-      let url = "https://www.mediawiki.org/w/api.php?";
       // let url = "https://www.mediawiki.org/w/api.php?action=query&prop=globalusage&gulimit=20&titles=File:Ferrari%20Roma%20in%20Basel.png";
-
-      //If there are more than 50 entries in namesArr --> split into subarrays of 50 elements each.
-      const namesArr2D = [];
-
-      while (namesArr.length) namesArr2D.push(namesArr.splice(0, 50));
-      console.log(namesArr2D);
-      //hier jetzt schleife und nach jedem fetch werte in titleCountArr speichern.
-/*
       const params = {
         action: "query",
         prop: "globalusage",
         format: "json", //format of returned file
-        gulimit: "500", //number of uses to return. Max is 500
-        titles: getTitles(),
+        gulimit: "50", //number of uses to return. Max is 500
+        titles: "",
         origin: "*" //CORS
       };
 
-      function getTitles() {
-        return namesArr.join("|");
+      //Split into subarrays of 50 elements each.
+      const namesArr2D = [];
+
+      while (namesArr.length) namesArr2D.push(namesArr.splice(0, 50));
+      console.log(namesArr2D);
+
+      for (let i = 0; i < namesArr2D.length; i++) {
+        let url = "https://www.mediawiki.org/w/api.php?";
+        params.titles = getTitles(i);
+        console.log(params);
+        Object.keys(params).forEach(function (title) { url += "&" + title + "=" + params[title]; });
+        console.log(url);
+        fetch(url)
+          .then(response => response.json())
+          .then(response => { extractTitleAndCount(response)/*console.log(response);*/ })
+          .catch(error => { console.log(error); });
       }
 
-      Object.keys(params).forEach(function (title) { url += "&" + title + "=" + params[title]; });
-      console.log(url);
+      function getTitles(i) {
+        return namesArr2D[i].join("|");
+      }
 
-      fetch(url)
-        .then(response => response.json())
-        .then(response => { console.log(response); })
-        .catch(error => { console.log(error); });
-        */
+      const titleCountArr = [];
+
+      function extractTitleAndCount(demoUsageCountObj) {
+        const fileCount = Object.keys(demoUsageCountObj.query.pages).length;
+        for (let i = 0; i < fileCount; i++) {
+          const title = Object.values(demoUsageCountObj.query.pages)[i].title;
+          const guLength = (Object.values(demoUsageCountObj.query.pages)[i].globalusage).length;
+          titleCountArr.push({ title, count: guLength });
+        }
+        console.log(titleCountArr);
+        document.write("Title Six: " + titleCountArr[5].title + "<br />");
+        document.write("Count Six: " + titleCountArr[5].count + "<br />");
+      }
     }
     getUsageCount(demopicsArr57Entries);
 
-    function extractTitleAndCount(usageCountObj) {
-      const fileCount = Object.keys(usageCountObj.query.pages).length;
-      const titleCountArr = [];
-
-      for (let i = 0; i < fileCount; i++) {
-        const title = Object.values(usageCountObj.query.pages)[i].title;
-        const guLength = (Object.values(usageCountObj.query.pages)[i].globalusage).length;
-        titleCountArr.push({ title: title, count: guLength });
-      }
-      console.log(titleCountArr);
-    }
-    // extractTitleAndCount(usageCountObj);
+    // extractTitleAndCount(demoUsageCountObj);
   </script>
 </body>
 
