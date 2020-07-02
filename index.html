@@ -5,12 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PopPics</title>
+  <script src="examples.js" defer></script>
+  <script src="js/main.js" type="module"></script>
 </head>
 
 <body>
-  <script src="examples.js"></script>
+  <app-searchuser></app-searchuser>
   <script>
-
     function getPics(input) {
       let picNamesArr = [];
       let url = "https://commons.wikimedia.org/w/api.php?";
@@ -126,9 +127,9 @@
     }
     
     const pics = getPics("Renek78");
-    pics.fetchElements();
-
+    // pics.fetchElements();
   </script>
+
 </body>
 
 </html>
