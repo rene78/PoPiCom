@@ -6,7 +6,7 @@
 //
 // The code autobinds 'this' to methods so I don't have to do it in every component
 
-class RootElement extends HTMLElement {
+export default class RootElement extends HTMLElement {
   constructor() {
     super();
     this.__doBind(this);
@@ -33,5 +33,3 @@ class RootElement extends HTMLElement {
     }
   }
 }
-
-export default RootElement;
