@@ -23,8 +23,10 @@ export default class appSearchUser extends RootElement {
     ev.preventDefault();
     // const getPics = new FetchPics();
     // getPics.fetchData(document.querySelector('#user').value);
-
-    this.fetchPics.fetchData(document.querySelector('#user').value);
+    const userName = document.querySelector('#user').value;
+    const pics = this.fetchPics.getPics(userName);
+    pics.fetchElements();
+    // this.fetchPics.fetchData(userName);
 
     // console.log("You entered this text: " + document.querySelector('#user').value);
   }
