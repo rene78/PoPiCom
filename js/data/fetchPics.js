@@ -96,19 +96,26 @@ export default new class FetchPics { //"new", because we want to export an insta
           return namesArr2D[i].join("|");
         }
 
-        const titleCountArr = [];
+        const titleCountObj = {
+          "headings": [
+            "Title",
+            "Count"
+          ],
+          "data":[]
+        };
 
-        function extractTitleAndCount(demoUsageCountObj, finalLoop) {
-          const fileCount = Object.keys(demoUsageCountObj.query.pages).length;
+        function extractTitleAndCount(usageCountObj, finalLoop) {
+          const fileCount = Object.keys(usageCountObj.query.pages).length;
           for (let i = 0; i < fileCount; i++) {
-            const title = Object.values(demoUsageCountObj.query.pages)[i].title;
-            const guLength = (Object.values(demoUsageCountObj.query.pages)[i].globalusage).length;
-            titleCountArr.push({ title, count: guLength });
+            const title = Object.values(usageCountObj.query.pages)[i].title;
+            const titleAsURI = "<a href='https://commons.wikimedia.org/wiki/"+title+"'>"+title.slice(5)+"</a>";
+            const count = (Object.values(usageCountObj.query.pages)[i].globalusage).length;
+            titleCountObj.data.push([titleAsURI, count ]);
           }
           // console.log(finalLoop);
           if (finalLoop) {
-            console.log(titleCountArr);
-            self.pubsub.publish('PicsDownload', titleCountArr, userName);
+            // console.log(titleCountObj);
+            self.pubsub.publish('PicsDownload', titleCountObj, userName);
           }
         }
       }

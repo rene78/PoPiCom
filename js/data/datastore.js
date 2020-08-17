@@ -30,10 +30,10 @@ export default new class DataStore {
 
   PicsDownload(pics, userName) {
     this.pictureArr = pics;
-    console.log(this.pictureArr);
+    // console.log(this.pictureArr);
     this.meta.userName = userName;
-    this.meta.nPics = pics.length;
-    this.meta.nUsages = pics.reduce((accumulator, picture) => accumulator + picture.count, 0);
+    this.meta.nPics = pics.data.length;
+    this.meta.nUsages = pics.data.reduce((accumulator, picture) => accumulator + picture[1], 0);
     // console.log(this.meta);
   }
 }
