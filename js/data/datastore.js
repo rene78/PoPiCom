@@ -29,7 +29,8 @@ export default new class DataStore {
   // <- all datastore PUBLISHERS publish info here ->
 
   PicsDownload(pics, userName) {
-    this.pictureArr = pics;
+    pics.data.sort((a,b) => b[1] - a[1]);//Sort descending according to usage count
+    this.pictureArr = pics; 
     // console.log(this.pictureArr);
     this.meta.userName = userName;
     this.meta.nPics = pics.data.length;

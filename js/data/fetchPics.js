@@ -99,7 +99,7 @@ export default new class FetchPics { //"new", because we want to export an insta
         const titleCountObj = {
           "headings": [
             "Title",
-            "Count"
+            "Usage Count"
           ],
           "data":[]
         };
