@@ -58,10 +58,12 @@ export default new class FetchPics { //"new", because we want to export an insta
         // let url = "https://www.mediawiki.org/w/api.php?action=query&prop=globalusage&gulimit=20&titles=File:Ferrari%20Roma%20in%20Basel.png";
         const params = {
           action: "query",
-          prop: "globalusage",
+          prop: "globalusage|imageinfo", //imageinfo needed for thumbnail url
           format: "json", //format of returned file
           gulimit: "500", //number of uses to return. Max is 500
           titles: "",
+          iiprop: "url", //get thumbnail url
+          iiurlwidth: "200", //thumbnail url width=200px
           origin: "*" //CORS
         };
 
@@ -79,7 +81,7 @@ export default new class FetchPics { //"new", because we want to export an insta
           let url = "https://www.mediawiki.org/w/api.php?";
           params.titles = getTitles(i);
           // console.log(params);
-          Object.keys(params).forEach(function (title) { url += "&" + title + "=" + params[title]; });
+          Object.keys(params).forEach(function (key) { url += "&" + key + "=" + params[key]; });
           // console.log(url);
           fetch(url)
             .then(response => response.json())
@@ -98,19 +100,22 @@ export default new class FetchPics { //"new", because we want to export an insta
 
         const titleCountObj = {
           "headings": [
-            "Title",
+            "Name",
+            "Thumbnail",
             "Usage Count"
           ],
-          "data":[]
+          "data": []
         };
 
         function extractTitleAndCount(usageCountObj, finalLoop) {
           const fileCount = Object.keys(usageCountObj.query.pages).length;
           for (let i = 0; i < fileCount; i++) {
             const title = Object.values(usageCountObj.query.pages)[i].title;
-            const titleAsURI = "<a href='https://commons.wikimedia.org/wiki/"+title+"'>"+title.slice(5)+"</a>";
+            const titleAsURI = "<a href='https://commons.wikimedia.org/wiki/" + title + "'>" + title.slice(5) + "</a>";
+            const thumbnailURI = Object.values(usageCountObj.query.pages)[i].imageinfo[0].thumburl;
+            const thumbnailURIasIMG = "<img class='lazy' data-src='" + thumbnailURI + "'/>";
             const count = (Object.values(usageCountObj.query.pages)[i].globalusage).length;
-            titleCountObj.data.push([titleAsURI, count ]);
+            titleCountObj.data.push([titleAsURI, thumbnailURIasIMG, count]);
           }
           // console.log(finalLoop);
           if (finalLoop) {

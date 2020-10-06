@@ -29,12 +29,12 @@ export default new class DataStore {
   // <- all datastore PUBLISHERS publish info here ->
 
   PicsDownload(pics, userName) {
-    pics.data.sort((a,b) => b[1] - a[1]);//Sort descending according to usage count
+    pics.data.sort((a,b) => b[2] - a[2]);//Sort descending according to usage count
     this.pictureArr = pics; 
     // console.log(this.pictureArr);
     this.meta.userName = userName;
     this.meta.nPics = pics.data.length;
-    this.meta.nUsages = pics.data.reduce((accumulator, picture) => accumulator + picture[1], 0);
+    this.meta.nUsages = pics.data.reduce((accumulator, picture) => accumulator + picture[2], 0);
     // console.log(this.meta);
   }
 }
