@@ -100,9 +100,9 @@ export default new class FetchPics { //"new", because we want to export an insta
 
         const titleCountObj = {
           "headings": [
-            "Name",
+            "Usage Count",
             "Thumbnail",
-            "Usage Count"
+            "Name"
           ],
           "data": []
         };
@@ -115,7 +115,7 @@ export default new class FetchPics { //"new", because we want to export an insta
             const thumbnailURI = Object.values(usageCountObj.query.pages)[i].imageinfo[0].thumburl;
             const thumbnailURIasIMG = "<img class='lazy' data-src='" + thumbnailURI + "'/>";
             const count = (Object.values(usageCountObj.query.pages)[i].globalusage).length;
-            titleCountObj.data.push([titleAsURI, thumbnailURIasIMG, count]);
+            titleCountObj.data.push([count, thumbnailURIasIMG, titleAsURI]);
           }
           // console.log(finalLoop);
           if (finalLoop) {
