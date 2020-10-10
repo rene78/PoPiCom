@@ -26,6 +26,12 @@ app-diagram {
 }
 /* #endregion */
 
+/* #region CSS RELATED TO <APP-STATS> */
+app-stats {
+  text-align: center;
+}
+/* #endregion */
+
 /* #region CSS RELATED TO <APP-PICTURETABLE> */
 td a {
   word-break: break-word;
