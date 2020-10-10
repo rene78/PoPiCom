@@ -9,14 +9,20 @@ body {
 }
 
 app-picturetable {
-  flex: 1 1 500px;
-  overflow: auto;
-  height: 85vh;
+  flex: 1 1 400px;
+  height: 81vh;
 }
 
 app-diagram {
   flex: 1 1 300px;
-  width: 400px;
+  width: 0px; /*Without this one the diagram is broken*/
+}
+
+@media (min-width: 700px) {
+  /* Make sure that diagram is fixed on desktop screens*/
+  app-picturetable {
+    overflow: auto;
+  }
 }
 /* #endregion */
 
