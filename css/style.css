@@ -2,6 +2,22 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+#content {
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+
+app-picturetable {
+  flex: 0 1 500px;
+  overflow: auto;
+  height: 85vh;
+}
+
+app-diagram {
+  flex: 1 1 300px;
+  width: 400px;
+}
 /* #endregion */
 
 /* #region CSS RELATED TO <APP-PICTURETABLE> */
@@ -188,5 +204,35 @@ td img {
   clear: both;
   content: " ";
   display: table;
+}
+/* #endregion */
+
+/* #region CSS RELATED TO <APP-DIAGRAM> */
+#chart-container {
+  position: relative;
+  /* left: 200px;
+  top: 300px;
+  width: 500px;
+  height: 500px; */
+}
+
+#tooltip-container {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  /*Without this image would disappear when one hovers over it */
+  width: 200px;
+  box-shadow: 2px 5px 5px #888888;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+#tooltip-container img {
+  border-radius: 5px 5px 0 0;
+}
+
+.tooltip-text {
+  text-align: center;
 }
 /* #endregion */

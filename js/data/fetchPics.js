@@ -10,7 +10,7 @@ export default new class FetchPics { //"new", because we want to export an insta
 
   getPics(userName) {
     console.log("You entered this text: " + userName);
-    const self = this;//used to bind "this" to function
+    const self = this; //used to bind "this" to function
 
     let picNamesArr = [];
     let url = "https://commons.wikimedia.org/w/api.php?";
