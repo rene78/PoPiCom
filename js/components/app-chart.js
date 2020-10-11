@@ -1,7 +1,7 @@
 import RootElement from '../helpers/app-rootelement.js';
 import PubSub from '../data/pubsub.js';
 
-export default class appDiagram extends RootElement {
+export default class appChart extends RootElement {
   constructor() {
     super();
     this.pubsub = PubSub;
@@ -14,7 +14,7 @@ export default class appDiagram extends RootElement {
   renderData(pictureArr) {
     this.innerHTML = `
       <div id="chart-container">
-        <canvas id="chart" width="400" height="400"></canvas>
+        <canvas id="chart" width="300" height="300"></canvas>
         <div id="tooltip-container"></div>
       </div>
     `;
@@ -51,6 +51,8 @@ console.log(usageCount);
         }]
       },
       options: {
+        // maintainAspectRatio: false,
+        // responsive: false,
         title: {
           display: true,
           text: 'Top 10 Pictures',
@@ -106,4 +108,4 @@ console.log(usageCount);
   }
 }
 
-customElements.define('app-diagram', appDiagram);
+customElements.define('app-chart', appChart);

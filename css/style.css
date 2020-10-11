@@ -13,13 +13,13 @@ app-picturetable {
   height: 81vh;
 }
 
-app-diagram {
+app-chart {
   flex: 1 1 300px;
-  width: 0px; /*Without this one the diagram is broken*/
+  width: 0px; /*Without this one the chart is broken*/
 }
 
 @media (min-width: 700px) {
-  /* Make sure that diagram is fixed on desktop screens*/
+  /* Make sure that chart is fixed on desktop screens*/
   app-picturetable {
     overflow: auto;
   }
@@ -228,13 +228,11 @@ td img {
 }
 /* #endregion */
 
-/* #region CSS RELATED TO <APP-DIAGRAM> */
+/* #region CSS RELATED TO <APP-CHART> */
 #chart-container {
   position: relative;
-  /* left: 200px;
-  top: 300px;
-  width: 500px;
-  height: 500px; */
+  width: 100%;
+  height: 100%;
 }
 
 #tooltip-container {
