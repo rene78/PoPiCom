@@ -5483,7 +5483,7 @@ const demoUsageCountObj = {
 
 export const demoTitleAndCount = {
   "headings": [
-    "Usage Count",
+    "#",
     "Thumbnail",
     "Name"
   ],

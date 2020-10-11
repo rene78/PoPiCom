@@ -100,7 +100,7 @@ export default new class FetchPics { //"new", because we want to export an insta
 
         const titleCountObj = {
           "headings": [
-            "Usage Count",
+            "#",
             "Thumbnail",
             "Name"
           ],
