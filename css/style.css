@@ -1,27 +1,56 @@
 /* #region CSS RELATED TO GENERAL PAGE LAYOUT */
 body {
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
 }
 
 #content {
-  display: flex;
-  flex-wrap: wrap-reverse;
+  display: grid;
+  grid-template-areas:
+    'search search'
+    'stats stats'
+    'table chart';
+  height: 100vh;
+  width: 100vw;
+}
+
+app-searchuser {
+  grid-area: search;
+}
+
+app-stats {
+  grid-area: stats;
 }
 
 app-picturetable {
-  flex: 1 1 400px;
-  height: 81vh;
+  grid-area: table;
+  overflow: auto;
+  width: 60vw;
 }
 
 app-chart {
-  flex: 1 1 300px;
-  width: 0px; /*Without this one the chart is broken*/
+  grid-area: chart;
+  width: 40vw;
 }
 
-@media (min-width: 700px) {
-  /* Make sure that chart is fixed on desktop screens*/
+@media (max-width: 700px) {
+  #content {
+    grid-template-areas:
+      'search'
+      'stats'
+      'chart'
+      'table';
+    height: auto;
+    width: auto;
+  }
+
+  app-chart {
+    width: 95vw;
+  }
+
   app-picturetable {
-    overflow: auto;
+    margin: 5px;
+    width: auto;
   }
 }
 /* #endregion */
@@ -35,6 +64,7 @@ app-chart {
   border-right: 1px solid #AAA;
   border-bottom: 1px solid #AAA;
   padding: 10px;
+  margin: 10px;
 }
 app-stats {
   text-align: center;
