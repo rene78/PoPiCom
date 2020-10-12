@@ -55,6 +55,17 @@ app-chart {
 }
 /* #endregion */
 
+/* #region CSS RELATED TO <SEARCH-USER> */
+app-searchuser {
+  text-align: center;
+  height: 70px;/*To avoid vertical movement of everything below*/
+}
+
+#autoComplete {
+  margin: 10px;
+}
+/* #endregion */
+
 /* #region CSS RELATED TO <APP-STATS> */
 #app-stats-text {
   background: #DDD;
