@@ -1,4 +1,4 @@
-Website: [PoPiCom](https://rene78.github.io/PoPiCom/)
+Website: [PopComPics](https://rene78.github.io/PopComPics/)
 
 This web app shows you how many times each picture of a certain user has been used on all Wikimedia projects.
 
