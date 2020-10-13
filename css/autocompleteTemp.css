@@ -54,6 +54,7 @@
   outline: none;
 }
 
-.info-triangle:hover .triangle-svg {
+.info-triangle:hover .info-triangle-svg,
+.github-corner:hover .github-triangle-svg {
   fill: #319b78;
 }
