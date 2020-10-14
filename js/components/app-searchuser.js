@@ -167,10 +167,10 @@ export default class appSearchUser extends RootElement {
       }
     }
 
-    const elementsThatHideInfobox = document.querySelectorAll(".close-infobox-button, .info-triangle, .tallypay");
-    console.log(elementsThatHideInfobox);
+    const elementsThatToggleInfobox = document.querySelectorAll(".close-infobox-button, .info-triangle, .tallypay");
+    // console.log(elementsThatToggleInfobox);
 
-    elementsThatHideInfobox.forEach(function (elem) {
+    elementsThatToggleInfobox.forEach(function (elem) {
       elem.addEventListener("click", function () {
         infobox.classList.toggle("show");
       });
