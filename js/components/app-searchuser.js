@@ -45,6 +45,20 @@ export default class appSearchUser extends RootElement {
       </svg>
     </div>
 
+    <div class="infobox">
+      <div>
+        <span title="Close" class="close-infobox-button">X</span>
+        <h2>PopComPics</h2>
+        <p>Have you ever asked yourself how often your pictures on Wikimedia Commons are used on all Wiki projects
+        like Wikipedia, Wikivoyage, Wikidata and others?</p>
+        <p>This application will tell you! Just enter your user
+        name and get a list with all your pictures and the usage amount for each. Furthermore there is a Top-10 list
+        of your most used pictures.</p>
+        <p>If you find this tool useful you can donate me some Satoshis &#128527;.</p>
+        <div class="tallypay" data-user="rene78" data-size="button" data-button_text="Donate via Lightning" id="tc_panel_rene78-1550"><div id="tc_tip_button-rene78-1550" class="tc_tip_button" style="display: inline-block;">	<div style="display:inline-block">Spende via Lightning</div></div></div>
+      </div>
+    </div>
+
     <input id="autoComplete" type="text" tabindex="1">
     `;
 
@@ -142,12 +156,26 @@ export default class appSearchUser extends RootElement {
         }
       });
     });
-  }
 
-  // searchPics(userName) {
-  //   const pics = this.fetchPics.getPics(userName);
-  //   pics.fetchElements();
-  // }
+    // Get the infobox modal
+    const infobox = document.querySelector(".infobox");
+
+    // When the user clicks anywhere outside of the infobox, close it
+    window.onclick = function (event) {
+      if (event.target == infobox) {
+        infobox.classList.toggle("show");
+      }
+    }
+
+    const elementsThatHideInfobox = document.querySelectorAll(".close-infobox-button, .info-triangle, .tallypay");
+    console.log(elementsThatHideInfobox);
+
+    elementsThatHideInfobox.forEach(function (elem) {
+      elem.addEventListener("click", function () {
+        infobox.classList.toggle("show");
+      });
+    });
+  }
 }
 
 customElements.define('app-searchuser', appSearchUser);

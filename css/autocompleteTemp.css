@@ -58,3 +58,53 @@
 .github-corner:hover .github-triangle-svg {
   fill: #319b78;
 }
+
+
+.infobox {
+  position: Fixed;
+  font-family: Verdana, Sans-Serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 400ms ease-in;
+  pointer-events: None;
+}
+
+.show {
+  opacity: 1;
+  pointer-events: Auto;
+}
+
+.infobox>div {
+  position: relative;
+  margin: 30px;
+  padding: 5px 20px 13px 20px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  background: linear-gradient(#FFFFFF, #999999);
+  cursor: Default;
+}
+
+.close-infobox-button {
+  background-color: #606061;
+  color: #FFFFFF;
+  line-height: 25px;
+  position: Absolute;
+  right: -12px;
+  text-align: Center;
+  top: -10px;
+  width: 24px;
+  text-decoration: None;
+  font-weight: Bold;
+  border-radius: 12px;
+  box-shadow: 1px 1px 3px #000000;
+  cursor: pointer;
+}
+
+.close-infobox-button:hover {
+  background-color: #00D9FF;
+}
