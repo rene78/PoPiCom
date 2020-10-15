@@ -13,6 +13,8 @@ export default new class FetchPics { //"new", because we want to export an insta
     const self = this; //used to bind "this" to function
 
     let picNamesArr = [];
+    const hardPicLimit = 40; //Set to 20000 pictures (20000pics/500picsPerQuery=40)
+    let hardPicLimitCounter = 0;
     let url = "https://commons.wikimedia.org/w/api.php?";
     //docs: https://www.mediawiki.org/wiki/API:Allimages
     const params = {
@@ -41,10 +43,12 @@ export default new class FetchPics { //"new", because we want to export an insta
             picNamesArr.push(response.query.allimages[i].title);
           }
           //if returned json has a key named "continue", write value to "params.lecontinue" and do another fetch
-          if (response.continue != undefined) {
+          if (response.continue != undefined && hardPicLimitCounter < hardPicLimit) {
             params.aicontinue = response.continue.aicontinue;//update lecontinue in order to fetch remaining entries
             // console.log(params);
             fetchElements();
+            hardPicLimitCounter++;
+            if (hardPicLimitCounter===hardPicLimit) console.warn("User has more than 20000 pictures. Only 20000 can be shown in this app!");
           } else {
             //console.log(picNamesArr);
             getUsageCount(picNamesArr);
