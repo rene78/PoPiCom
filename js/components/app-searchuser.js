@@ -100,14 +100,6 @@ export default class appSearchUser extends RootElement {
         key: ["name"],
         cache: false
       },
-      // query: {
-      //   manipulate: function (query) {
-      //     return query.replace("pizza", "burger");
-      //   },
-      // },
-      // trigger: {
-      //   event: ["input", "focusin", "focusout"]
-      // },
       placeHolder: "Commons User Name...",
       threshold: 3,                        // Min. Chars length to start Engine | (Optional)
       debounce: 300,                       // Post duration for engine to start | (Optional)
@@ -129,6 +121,10 @@ export default class appSearchUser extends RootElement {
         const userName = feedback.selection.value.name;
         const pics = self.fetchPics.getPics(userName);
         pics.fetchElements();
+        //Write username to local storage. When page website opened the next time this user will be loaded again.
+        localStorage.setItem('username', "#" + userName); //the hash symbol simplifies the function in main.js
+        //Write usernam to url after hash
+        window.location.hash = userName;
         // Clear Input
         document.querySelector("#autoComplete").value = "";
         // Change placeholder with the selected value
@@ -167,6 +163,7 @@ export default class appSearchUser extends RootElement {
       }
     }
 
+    //Define all elements that can toggle display of infobox
     const elementsThatToggleInfobox = document.querySelectorAll(".close-infobox-button, .info-triangle, .tallypay");
     // console.log(elementsThatToggleInfobox);
 
