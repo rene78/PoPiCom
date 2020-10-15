@@ -14,6 +14,7 @@ if (location.hash || userNameFromLocalStorage) {
   const fetchPicsFromLSUser = FetchPics.getPics(userNameWithoutHash);
   fetchPicsFromLSUser.fetchElements();
   localStorage.setItem('username', "#" + userNameWithoutHash);//if hash and localStorage had different values: Save hash value to LS
+  window.location.hash = userNameWithoutHash;//if username came from LS: Write to URL hash
 //If not --> open empty start page with infobox opened (cause it can be assumed that this is a new user)
 } else {
   const infobox = document.querySelector(".infobox");
