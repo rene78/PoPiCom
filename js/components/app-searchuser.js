@@ -49,9 +49,9 @@ export default class appSearchUser extends RootElement {
       <div>
         <span title="Close" class="close-infobox-button">X</span>
         <h2>PopComPics</h2>
-        <p>Have you ever asked yourself how often your pictures on Wikimedia Commons are used among all Wiki projects
-        like Wikipedia, Wikivoyage, Wikidata and others?</p>
-        <p><b>Pop</b>ular <b>Com</b>mons <b>Pics</b> will tell you! Just enter your user
+        <p>Have you ever asked yourself how popular your pictures are on Wikipedia, Wikivoyage, Wikidata and other
+        Wikimedia sites?</p>
+        <p><b>Pop</b>ular <b>Com</b>mons <b>Pics</b> will tell you just that! Simply enter your user
         name and get a list with all your images and the usage count for each. Furthermore there is a Top 10 list
         of your most used pictures.</p>
         <p>If you find this tool useful you can donate some Satoshis to me &#128527;.</p>
