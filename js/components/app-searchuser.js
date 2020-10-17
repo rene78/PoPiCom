@@ -52,8 +52,8 @@ export default class appSearchUser extends RootElement {
         <p>Have you ever asked yourself how popular your pictures are on Wikipedia, Wikivoyage, Wikidata and other
         Wikimedia sites?</p>
         <p><b>Pop</b>ular <b>Com</b>mons <b>Pics</b> will tell you just that! Simply enter your user
-        name and get a list with all your images and the usage count for each. Furthermore there is a Top 10 list
-        of your most used pictures.</p>
+        name and get a list with all your images and the usage count for each. Furthermore there is a chart with your
+        Top 10 most used pictures.</p>
         <p>If you find this tool useful you can donate some Satoshis to me &#128527;.</p>
         <div class="tallypay" data-user="rene78" data-size="button" data-button_text="Donate via Lightning" id="tc_panel_rene78-1550"><div id="tc_tip_button-rene78-1550" class="tc_tip_button" style="display: inline-block;">	<div style="display:inline-block">Spende via Lightning</div></div></div>
       </div>
