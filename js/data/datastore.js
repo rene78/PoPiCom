@@ -12,7 +12,7 @@ export default new class DataStore {
   }
 
   setRequest(request) {
-    this[request.newInfo](request.pics, request.userName);//no return, because nothing is sent back to component
+    this[request.newInfo](request.data, request.userName);//no return, because nothing is sent back to component
   }
 
   // <- all datastore SUBSCRIBERS get info here ->
@@ -21,7 +21,7 @@ export default new class DataStore {
     //Return object with "userName, nPics, nUsages"
     return this.meta;
   }
-  
+
   getPictureArr() {
     return this.pictureArr;
   }
@@ -36,5 +36,11 @@ export default new class DataStore {
     this.meta.nPics = pics.data.length;
     this.meta.nUsages = pics.data.reduce((accumulator, picture) => accumulator + picture[0], 0);
     // console.log(this.meta);
+  }
+
+  InfoMessage(modalObj, userName) {
+    // this.meta.userName = userName; //not used
+    this.meta.text = modalObj.text;
+    this.meta.type = modalObj.type;
   }
 }

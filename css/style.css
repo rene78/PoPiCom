@@ -55,7 +55,48 @@ app-chart {
 }
 /* #endregion */
 
-/* #region CSS RELATED TO <SEARCH-USER> */
+/* #region CSS RELATED TO <APP-MODAL> */
+.modal {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  position: fixed;
+  top: -100px;
+  left: 0;
+  right: 0;
+  margin: 5px 30px 0px;/* top / left,right / bottom */
+  padding: 5px 20px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  cursor: Default;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  z-index: 2;
+}
+
+.show-modal {
+  animation-name: animateShowHide;
+  animation-duration: 2s;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+}
+
+@keyframes animateShowHide {
+  0%   {top: -100px;}
+  30%   {top: 0px;}
+  100%  {top: 0px;}
+}
+
+.information {
+  background-color: orange;
+  color: white;
+}
+
+.success {
+  background-color: green;
+  color: white;
+}
+/* #endregion */
+
+/* #region CSS RELATED TO <APP-SEARCHUSER> */
 app-searchuser {
   text-align: center;
   height: 70px;/*To avoid vertical movement of everything below*/
@@ -125,7 +166,7 @@ app-searchuser {
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.6);
-  z-index: 99999;
+  z-index: 1;
   opacity: 0;
   transition: opacity 400ms ease-in;
   pointer-events: None;

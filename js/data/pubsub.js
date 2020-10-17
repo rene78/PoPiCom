@@ -27,12 +27,12 @@ export default new class PubSub {
   }
 
   // when anyone publishes something it arrives here,
-  // a string of newInfo eg 'AddTask' and an object of data to publish
-  publish(newInfo, pics, userName) {
+  // a string of newInfo eg 'PicsDownload' and an object of data to publish
+  publish(newInfo, data, userName) {
     // publish the new/changed data
     this.datastore.setRequest({
       newInfo,
-      pics,
+      data,
       userName
     });
 

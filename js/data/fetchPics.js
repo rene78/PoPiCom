@@ -38,6 +38,15 @@ export default new class FetchPics { //"new", because we want to export an insta
       fetch(url)
         .then(response => response.json())
         .then(response => {
+          if (response.query.allimages.length === 0) {
+            // console.warn("User has not uploaded any pictures");
+            const modalObj = {
+              text: "User <b>" + userName + "</b> has not uploaded any pictures",
+              type: "information"
+            }
+            self.pubsub.publish('InfoMessage', modalObj, userName);
+            return;
+          }
           //copy all the picture names into array picNamesArr
           for (let i = 0; i < response.query.allimages.length; i++) {
             picNamesArr.push(response.query.allimages[i].title);
@@ -48,7 +57,14 @@ export default new class FetchPics { //"new", because we want to export an insta
             // console.log(params);
             fetchElements();
             hardPicLimitCounter++;
-            if (hardPicLimitCounter===hardPicLimit) console.warn("User has more than 20000 pictures. Only 20000 can be shown in this app!");
+            if (hardPicLimitCounter === hardPicLimit) {
+              // console.warn("User has more than 20000 pictures. Only 20000 can be shown in this app!");
+              const modalObj = {
+                text: "User <b>" + userName + "</b> has uploaded more than 20000 pictures. Only the first 20000 can be shown in this app!",
+                type: "information"
+              }
+              self.pubsub.publish('InfoMessage', modalObj, userName);
+            }
           } else {
             //console.log(picNamesArr);
             getUsageCount(picNamesArr);
