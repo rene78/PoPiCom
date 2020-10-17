@@ -90,7 +90,7 @@ export default class appChart extends RootElement {
             const tooltipText = document.createElement('div');
             tooltipText.className = "tooltip-text";
             const nUsage = pictureArr.data[selectedIndex][0];
-            tooltipText.innerHTML = "Used on <b>" + nUsage + "</b> sites";
+            tooltipText.innerHTML = "Used on <b>" + nUsage + "</b> site" + (nUsage !== 1 ? "s" : "");
             tooltip.appendChild(tooltipText);
 
             // move the tooltip to the 'correct' position.
