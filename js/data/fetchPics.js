@@ -35,6 +35,7 @@ export default new class FetchPics { //"new", because we want to export an insta
 
     function fetchElements() {
       createURL();
+      addSpinner(); //show spinner animation and blur background
       fetch(url)
         .then(response => response.json())
         .then(response => {
@@ -45,6 +46,7 @@ export default new class FetchPics { //"new", because we want to export an insta
               type: "information"
             }
             self.pubsub.publish('InfoMessage', modalObj, userName);
+            removeSpinner(); //hide animation
             return;
           }
           //copy all the picture names into array picNamesArr
@@ -60,7 +62,7 @@ export default new class FetchPics { //"new", because we want to export an insta
             if (hardPicLimitCounter === hardPicLimit) {
               // console.warn("User has more than 20000 pictures. Only 20000 can be shown in this app!");
               const modalObj = {
-                text: "User <b>" + userName + "</b> has uploaded more than 20000 pictures. Only the first 20000 can be shown in this app!",
+                text: "User <b>" + userName + "</b> has uploaded more than 20000 pictures. The first 20000 will be shown. Please wait...",
                 type: "information"
               }
               self.pubsub.publish('InfoMessage', modalObj, userName);
@@ -71,7 +73,10 @@ export default new class FetchPics { //"new", because we want to export an insta
             //console.log(response.query.allimages);
           }
         })
-        .catch(error => { console.log(error); });
+        .catch(error => {
+          console.log(error);
+          // removeSpinner(); //hide animation
+        });
       //-----------------------------------------------------------------------
 
       function getUsageCount(picNamesArr) {
@@ -111,7 +116,10 @@ export default new class FetchPics { //"new", because we want to export an insta
               // console.log(finalLoop);
               extractTitleAndCount(response, finalLoop)/*console.log(response);*/
             })
-            .catch(error => { console.log(error); });
+            .catch(error => {
+              console.log(error);
+              // removeSpinner(); //hide animation
+            });
         }
 
         function getTitles(i) {
@@ -140,10 +148,23 @@ export default new class FetchPics { //"new", because we want to export an insta
           // console.log(finalLoop);
           if (finalLoop) {
             // console.log(titleCountObj);
+            removeSpinner(); //hide animation
             self.pubsub.publish('PicsDownload', titleCountObj, userName);
           }
         }
       }
+    }
+
+    const spinner = document.querySelector("#loading-animation");
+    const content = document.querySelector("#content");
+    function addSpinner() {
+      spinner.classList.remove("hide");
+      content.classList.add("grey-blur");
+    }
+
+    function removeSpinner() {
+      spinner.classList.add("hide");
+      content.classList.remove("grey-blur");
     }
 
     const getPicsObj = {
