@@ -48,7 +48,7 @@ export default class appSearchUser extends RootElement {
     <div class="infobox">
       <div>
         <span title="Close" class="close-infobox-button">X</span>
-        <h2>PopComPics</h2>
+        <h2><img src="img/favicon-32x32.png" alt="Popcorn bag" width="32" height="32" style="vertical-align:middle"> PopComPics <img src="img/favicon-32x32.png" alt="Popcorn bag" width="32" height="32" style="vertical-align:middle"></h2>
         <p>Have you ever asked yourself how popular your pictures are on Wikipedia, Wikivoyage, Wikidata and other
         Wikimedia sites?</p>
         <p><b>Pop</b>ular <b>Com</b>mons <b>Pics</b> will tell you just that! Simply enter your user
