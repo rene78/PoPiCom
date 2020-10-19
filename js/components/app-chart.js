@@ -28,7 +28,7 @@ export default class appChart extends RootElement {
       chartLabels.push(pictureArr.data[i][2]);
       usageCount.push(pictureArr.data[i][0]);
     }
-    console.log(usageCount);
+    // console.log(usageCount);
     new Chart(document.getElementById("chart"), {
       type: "doughnut",
       data: {

@@ -88,11 +88,11 @@ export default class appSearchUser extends RootElement {
           let url = "https://commons.wikimedia.org/w/api.php?";
           // console.log(params);
           Object.keys(params).forEach(function (key) { url += "&" + key + "=" + params[key]; });
-          console.log(url);
+          // console.log(url);
           const source = await fetch(url);
           // Format data into JSON
           const usersArr = await source.json();
-          console.log(usersArr.query.allusers);
+          // console.log(usersArr.query.allusers);
 
           // Return Fetched data
           return usersArr.query.allusers;

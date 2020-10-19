@@ -11,7 +11,7 @@ export default class appPictureTable extends RootElement {
   }
 
   renderData(pictureArr) {
-    console.log(pictureArr);
+    // console.log(pictureArr);
     this.innerHTML = "<table id='myTable'></table>";
     let dataTable = new simpleDatatables.DataTable(myTable, {
       data: pictureArr
