@@ -12,9 +12,9 @@ export default new class FetchPics { //"new", because we want to export an insta
     console.log("You entered this text: " + userName);
     const self = this; //used to bind "this" to function
 
-    let picNamesArr = [];
-    const hardPicLimit = 40; //Set to 20000 pictures (20000pics/500picsPerQuery=40)
-    let hardPicLimitCounter = 0;
+    const pageIdsArr = [];
+    const hardPicLimit = 44; //Set to 22000 pictures (22000pics/500picsPerQuery=44)
+    let hardPicLimitCounter = 1;
     let url = "https://commons.wikimedia.org/w/api.php?";
     //docs: https://www.mediawiki.org/wiki/API:Allimages
     const params = {
@@ -23,7 +23,7 @@ export default new class FetchPics { //"new", because we want to export an insta
       aiuser: userName, //user from whom to get picture data
       aisort: "timestamp", //sort according to date
       ailimit: "500", //number of pictures to return. Max is 500
-      aiprop: "", //what type of data to return. keep empty to return the bare minimum
+      aiprop: "url", //what type of data to return. keep empty to return the bare minimum
       format: "json", //format of returned file
       origin: "*" //CORS
     };
@@ -49,27 +49,30 @@ export default new class FetchPics { //"new", because we want to export an insta
             removeSpinner(); //hide animation
             return;
           }
-          //copy all the picture names into array picNamesArr
+          //copy all the picture ids into array pageIdsArr
           for (let i = 0; i < response.query.allimages.length; i++) {
-            picNamesArr.push(response.query.allimages[i].title);
+            const descriptionshorturl = response.query.allimages[i].descriptionshorturl;
+            const cutPos = descriptionshorturl.search("curid=");
+            const pageid = descriptionshorturl.slice(cutPos + 6);
+            pageIdsArr.push(pageid);
           }
           //if returned json has a key named "continue", write value to "params.lecontinue" and do another fetch
           if (response.continue != undefined && hardPicLimitCounter < hardPicLimit) {
-            params.aicontinue = response.continue.aicontinue;//update lecontinue in order to fetch remaining entries
+            params.aicontinue = response.continue.aicontinue;//update aicontinue in order to fetch remaining entries
             // console.log(params);
             fetchElements();
             hardPicLimitCounter++;
             if (hardPicLimitCounter === hardPicLimit) {
-              // console.warn("User has more than 20000 pictures. Only 20000 can be shown in this app!");
+              // console.warn("User has more than 22000 pictures. Only 22000 can be shown in this app!");
               const modalObj = {
-                text: "User <b>" + userName + "</b> has uploaded more than 20000 pictures. The first 20000 will be shown. Please wait...",
+                text: "User <b>" + userName + "</b> has uploaded more than 22000 pictures. The first 22000 will be shown. Please wait...",
                 type: "information"
               }
               self.pubsub.publish('InfoMessage', modalObj, userName);
             }
           } else {
-            //console.log(picNamesArr);
-            getUsageCount(picNamesArr);
+            //console.log(pageIdsArr);
+            getUsageCount(pageIdsArr);
             //console.log(response.query.allimages);
           }
         })
@@ -79,14 +82,15 @@ export default new class FetchPics { //"new", because we want to export an insta
         });
       //-----------------------------------------------------------------------
 
-      function getUsageCount(picNamesArr) {
+      function getUsageCount(pageIdsArr) {
         // let url = "https://www.mediawiki.org/w/api.php?action=query&prop=globalusage&gulimit=20&titles=File:Ferrari%20Roma%20in%20Basel.png";
+        // Documentation: https://www.mediawiki.org/w/api.php?action=help&modules=query%2Bglobalusage
         const params = {
           action: "query",
           prop: "globalusage|imageinfo", //imageinfo needed for thumbnail url
           format: "json", //format of returned file
           gulimit: "500", //number of uses to return. Max is 500
-          titles: "",
+          pageids: "",
           iiprop: "url", //get thumbnail url
           iiurlwidth: "200", //thumbnail url width=200px
           origin: "*" //CORS
@@ -95,7 +99,7 @@ export default new class FetchPics { //"new", because we want to export an insta
         //Split into subarrays of 50 elements each.
         const namesArr2D = [];
 
-        while (picNamesArr.length) namesArr2D.push(picNamesArr.splice(0, 50));
+        while (pageIdsArr.length) namesArr2D.push(pageIdsArr.splice(0, 50));
         // console.log(namesArr2D);
 
         let APIResponseCounter = 0;
@@ -103,8 +107,8 @@ export default new class FetchPics { //"new", because we want to export an insta
 
         for (let i = 0; i < namesArr2D.length; i++) {
           // console.log(finalLoop);
-          let url = "https://www.mediawiki.org/w/api.php?";
-          params.titles = getTitles(i);
+          let url = "https://commons.wikimedia.org/w/api.php?";
+          params.pageids = getTitles(i);
           // console.log(params);
           Object.keys(params).forEach(function (key) { url += "&" + key + "=" + params[key]; });
           // console.log(url);
@@ -136,6 +140,7 @@ export default new class FetchPics { //"new", because we want to export an insta
         };
 
         function extractTitleAndCount(usageCountObj, finalLoop) {
+          // console.log(usageCountObj);
           const fileCount = Object.keys(usageCountObj.query.pages).length;
           for (let i = 0; i < fileCount; i++) {
             const title = Object.values(usageCountObj.query.pages)[i].title;

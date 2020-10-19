@@ -4750,732 +4750,95 @@ const demopicsArr57Entries = [
 ];
 
 const demoUsageCountObj = {
+  "warnings": {
+    "main": {
+      "*": "Unrecognized parameter: Wine_Bar_@_Jalan_Ampang,_Kuala_Lumpur_jpg|File:KL_Sentral_seen_from_ALoft_top_floor_3_jpg|File:Peter's_Pork_Noodle,_Brickfields,_Kuala_Lumpur_2_jpg|File:Peter's_Pork_Noodle,_Brickfields,_Kuala_Lumpur_3_jpg|File:Devi's_Corner,_Bangsar,_Kuala_Lumpur_jpg|File:Little_India,_Brickfields,_Kuala_Lumpur_2_jpg|File:KL_Sentral_station_jpg|File:Tradewinds_Square_in_November_2017_1_jpg|File:Tradewinds_Square_in_November_2017_2_jpg|File:Tradewinds_Square_in_November_2017_3_jpg|File:Vortex_Suites_KLCC,_Kuala_Lumpur_jpg|File:St__Regis_Kuala_Lumpur_as_seen_from_Aloft_jpg|File:Little_India,_Brickfields,_Kuala_Lumpur_1_jpg|File:Peter's_Pork_Noodle,_Brickfields,_Kuala_Lumpur_1_jpg|File:Torre_Allianz_(23599289864)_jpg|File:Red_Dot_Design_Museum_Singapore_jpg|File:FourSeasonsKL_January2018_(cropped)_jpg."
+    }
+  },
   "batchcomplete": "",
   "query": {
+    "normalized": [
+      {
+        "from": "File:Alexis Bistro ",
+        "to": "File:Alexis Bistro"
+      }
+    ],
     "pages": {
       "-1": {
         "ns": 6,
-        "title": "File:National Museum (Malaysia) in May 2020.jpg",
+        "title": "File:Hotel Llao Llao, Bariloche.jpg",
         "missing": "",
         "known": "",
-        "globalusage": []
+        "globalusage": [
+          {
+            "title": "Llao_Llao_Hotel",
+            "wiki": "en.wikipedia.org",
+            "url": "https://en.wikipedia.org/wiki/Llao_Llao_Hotel"
+          },
+          {
+            "title": "San_Carlos_de_Bariloche",
+            "wiki": "en.wikivoyage.org",
+            "url": "https://en.wikivoyage.org/wiki/San_Carlos_de_Bariloche"
+          },
+          {
+            "title": "Provincia_de_Río_Negro",
+            "wiki": "es.wikipedia.org",
+            "url": "https://es.wikipedia.org/wiki/Provincia_de_R%C3%ADo_Negro"
+          },
+          {
+            "title": "Hotel_Llao_Llao",
+            "wiki": "it.wikipedia.org",
+            "url": "https://it.wikipedia.org/wiki/Hotel_Llao_Llao"
+          },
+          {
+            "title": "Q9287193",
+            "wiki": "www.wikidata.org",
+            "url": "https://www.wikidata.org/wiki/Q9287193"
+          }
+        ],
+        "imagerepository": "shared",
+        "imageinfo": [
+          {
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hotel_Llao_Llao%2C_Bariloche.jpg/200px-Hotel_Llao_Llao%2C_Bariloche.jpg",
+            "thumbwidth": 200,
+            "thumbheight": 133,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hotel_Llao_Llao%2C_Bariloche.jpg/399px-Hotel_Llao_Llao%2C_Bariloche.jpg",
+              "1.5": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hotel_Llao_Llao%2C_Bariloche.jpg/300px-Hotel_Llao_Llao%2C_Bariloche.jpg"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Hotel_Llao_Llao%2C_Bariloche.jpg",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hotel_Llao_Llao,_Bariloche.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=61527073"
+          }
+        ]
       },
       "-2": {
         "ns": 6,
-        "title": "File:Planetarium Negara in May 2020.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-3": {
-        "ns": 6,
-        "title": "File:Damansara City Mall, Kuala Lumpur during MCO in March 2020.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-4": {
-        "ns": 6,
-        "title": "File:Segambut Komuter station in March 2020.jpg",
+        "title": "File:Tanjung Rhu Beach.jpg",
         "missing": "",
         "known": "",
         "globalusage": [
           {
-            "title": "Segambut_Komuter_station",
-            "wiki": "en.wikipedia.org",
-            "url": "https://en.wikipedia.org/wiki/Segambut_Komuter_station"
-          },
-          {
-            "title": "Q6131632",
-            "wiki": "www.wikidata.org",
-            "url": "https://www.wikidata.org/wiki/Q6131632"
-          }
-        ]
-      },
-      "-5": {
-        "ns": 6,
-        "title": "File:KL Botanical Garden Overview Map in 2020.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-6": {
-        "ns": 6,
-        "title": "File:MidValley Tower of Light in February 2020.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": [
-          {
-            "title": "List_of_tallest_buildings_in_Kuala_Lumpur",
-            "wiki": "en.wikipedia.org",
-            "url": "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Kuala_Lumpur"
-          }
-        ]
-      },
-      "-7": {
-        "ns": 6,
-        "title": "File:The Vogue Suites One, KL Eco City in February 2020.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": [
-          {
-            "title": "List_of_tallest_buildings_in_Kuala_Lumpur",
-            "wiki": "en.wikipedia.org",
-            "url": "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Kuala_Lumpur"
-          }
-        ]
-      },
-      "-8": {
-        "ns": 6,
-        "title": "File:KL Eco Sky in February 2020.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-9": {
-        "ns": 6,
-        "title": "File:Koon Kee Wan Tan Mee in Kuala Lumpur.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": [
-          {
-            "title": "KL_sightseeing_walk",
+            "title": "Langkawi",
             "wiki": "en.wikivoyage.org",
-            "url": "https://en.wikivoyage.org/wiki/KL_sightseeing_walk"
+            "url": "https://en.wikivoyage.org/wiki/Langkawi"
+          }
+        ],
+        "imagerepository": "shared",
+        "imageinfo": [
+          {
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Tanjung_Rhu_Beach.jpg/200px-Tanjung_Rhu_Beach.jpg",
+            "thumbwidth": 200,
+            "thumbheight": 150,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Tanjung_Rhu_Beach.jpg/400px-Tanjung_Rhu_Beach.jpg",
+              "1.5": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Tanjung_Rhu_Beach.jpg/300px-Tanjung_Rhu_Beach.jpg"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Tanjung_Rhu_Beach.jpg",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Tanjung_Rhu_Beach.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=61535571"
           }
         ]
-      },
-      "-10": {
-        "ns": 6,
-        "title": "File:Wartebereich Terminal E - Flughafen Zürich.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-11": {
-        "ns": 6,
-        "title": "File:Flughafen Zürich Besucherterrasse Dock E im Jahr 2020.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-12": {
-        "ns": 6,
-        "title": "File:Friedrichshafen - Blick aus Bibliothek auf Hafen 2019 01.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-13": {
-        "ns": 6,
-        "title": "File:Friedrichshafen - Blick aus Bibliothek auf Hafen 2019 02.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-14": {
-        "ns": 6,
-        "title": "File:YapAhLoyTemple002.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": [
-          {
-            "title": "Kuala_Lumpur/Central",
-            "wiki": "en.wikivoyage.org",
-            "url": "https://en.wikivoyage.org/wiki/Kuala_Lumpur/Central"
-          },
-          {
-            "title": "KL_sightseeing_walk",
-            "wiki": "en.wikivoyage.org",
-            "url": "https://en.wikivoyage.org/wiki/KL_sightseeing_walk"
-          },
-          {
-            "title": "Q2494864",
-            "wiki": "www.wikidata.org",
-            "url": "https://www.wikidata.org/wiki/Q2494864"
-          }
-        ]
-      },
-      "-15": {
-        "ns": 6,
-        "title": "File:Buenos Aires - Monserrat - Avenida 9 de Julio.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": [
-          {
-            "title": "Monserrat,_Buenos_Aires",
-            "wiki": "af.wikipedia.org",
-            "url": "https://af.wikipedia.org/wiki/Monserrat,_Buenos_Aires"
-          },
-          {
-            "title": "Metropool",
-            "wiki": "af.wikipedia.org",
-            "url": "https://af.wikipedia.org/wiki/Metropool"
-          },
-          {
-            "title": "قائمة_مدن_الأرجنتين",
-            "wiki": "ar.wikipedia.org",
-            "url": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D9%85%D8%AF%D9%86_%D8%A7%D9%84%D8%A3%D8%B1%D8%AC%D9%86%D8%AA%D9%8A%D9%86"
-          },
-          {
-            "title": "Avenida_9_de_Julio",
-            "wiki": "ca.wikipedia.org",
-            "url": "https://ca.wikipedia.org/wiki/Avenida_9_de_Julio"
-          },
-          {
-            "title": "Buenos_Aires",
-            "wiki": "cs.wikipedia.org",
-            "url": "https://cs.wikipedia.org/wiki/Buenos_Aires"
-          },
-          {
-            "title": "Avenida_9_de_Julio",
-            "wiki": "de.wikipedia.org",
-            "url": "https://de.wikipedia.org/wiki/Avenida_9_de_Julio"
-          },
-          {
-            "title": "List_of_cities_in_Argentina",
-            "wiki": "en.wikipedia.org",
-            "url": "https://en.wikipedia.org/wiki/List_of_cities_in_Argentina"
-          },
-          {
-            "title": "Lists_of_cities_by_country",
-            "wiki": "en.wikipedia.org",
-            "url": "https://en.wikipedia.org/wiki/Lists_of_cities_by_country"
-          },
-          {
-            "title": "List_of_towns_and_cities_with_100,000_or_more_inhabitants/country:_A-B",
-            "wiki": "en.wikipedia.org",
-            "url": "https://en.wikipedia.org/wiki/List_of_towns_and_cities_with_100,000_or_more_inhabitants/country:_A-B"
-          },
-          {
-            "title": "Metropolis",
-            "wiki": "en.wikipedia.org",
-            "url": "https://en.wikipedia.org/wiki/Metropolis"
-          },
-          {
-            "title": "User:Thare/sandbox",
-            "wiki": "en.wikipedia.org",
-            "url": "https://en.wikipedia.org/wiki/User:Thare/sandbox"
-          },
-          {
-            "title": "Buenos_Aires",
-            "wiki": "en.wikivoyage.org",
-            "url": "https://en.wikivoyage.org/wiki/Buenos_Aires"
-          },
-          {
-            "title": "Buenos_Aires_to_Machu_Picchu_overland",
-            "wiki": "en.wikivoyage.org",
-            "url": "https://en.wikivoyage.org/wiki/Buenos_Aires_to_Machu_Picchu_overland"
-          },
-          {
-            "title": "Avenida_9_de_Julio",
-            "wiki": "es.wikipedia.org",
-            "url": "https://es.wikipedia.org/wiki/Avenida_9_de_Julio"
-          },
-          {
-            "title": "Wikipedia:¿Sabías_que.../SQ",
-            "wiki": "es.wikipedia.org",
-            "url": "https://es.wikipedia.org/wiki/Wikipedia:%C2%BFSab%C3%ADas_que.../SQ"
-          },
-          {
-            "title": "Plantilla:SQ/176",
-            "wiki": "es.wikipedia.org",
-            "url": "https://es.wikipedia.org/wiki/Plantilla:SQ/176"
-          },
-          {
-            "title": "Usuario:Lobo/Taller/¿Sabías_que.../SQ/101-200",
-            "wiki": "es.wikipedia.org",
-            "url": "https://es.wikipedia.org/wiki/Usuario:Lobo/Taller/%C2%BFSab%C3%ADas_que.../SQ/101-200"
-          },
-          {
-            "title": "Avenida_9_de_Julio",
-            "wiki": "eu.wikipedia.org",
-            "url": "https://eu.wikipedia.org/wiki/Avenida_9_de_Julio"
-          },
-          {
-            "title": "فهرست‌های_شهرهای_جهان",
-            "wiki": "fa.wikipedia.org",
-            "url": "https://fa.wikipedia.org/wiki/%D9%81%D9%87%D8%B1%D8%B3%D8%AA%E2%80%8C%D9%87%D8%A7%DB%8C_%D8%B4%D9%87%D8%B1%D9%87%D8%A7%DB%8C_%D8%AC%D9%87%D8%A7%D9%86"
-          },
-          {
-            "title": "Avenida_9_de_Julio",
-            "wiki": "fr.wikipedia.org",
-            "url": "https://fr.wikipedia.org/wiki/Avenida_9_de_Julio"
-          },
-          {
-            "title": "Utilisateur:D46798",
-            "wiki": "fr.wikipedia.org",
-            "url": "https://fr.wikipedia.org/wiki/Utilisateur:D46798"
-          },
-          {
-            "title": "שדרת_9_ביולי",
-            "wiki": "he.wikipedia.org",
-            "url": "https://he.wikipedia.org/wiki/%D7%A9%D7%93%D7%A8%D7%AA_9_%D7%91%D7%99%D7%95%D7%9C%D7%99"
-          },
-          {
-            "title": "בואנוס_איירס",
-            "wiki": "he.wikivoyage.org",
-            "url": "https://he.wikivoyage.org/wiki/%D7%91%D7%95%D7%90%D7%A0%D7%95%D7%A1_%D7%90%D7%99%D7%99%D7%A8%D7%A1"
-          },
-          {
-            "title": "Արգենտինայի_քաղաքների_ցանկ",
-            "wiki": "hy.wikipedia.org",
-            "url": "https://hy.wikipedia.org/wiki/%D4%B1%D6%80%D5%A3%D5%A5%D5%B6%D5%BF%D5%AB%D5%B6%D5%A1%D5%B5%D5%AB_%D6%84%D5%A1%D5%B2%D5%A1%D6%84%D5%B6%D5%A5%D6%80%D5%AB_%D6%81%D5%A1%D5%B6%D5%AF"
-          },
-          {
-            "title": "Daftar_kota_di_Argentina",
-            "wiki": "id.wikipedia.org",
-            "url": "https://id.wikipedia.org/wiki/Daftar_kota_di_Argentina"
-          },
-          {
-            "title": "Buenos_Aires",
-            "wiki": "io.wikipedia.org",
-            "url": "https://io.wikipedia.org/wiki/Buenos_Aires"
-          },
-          {
-            "title": "Avenida_9_de_Julio",
-            "wiki": "it.wikipedia.org",
-            "url": "https://it.wikipedia.org/wiki/Avenida_9_de_Julio"
-          },
-          {
-            "title": "7月9日大通り",
-            "wiki": "ja.wikipedia.org",
-            "url": "https://ja.wikipedia.org/wiki/7%E6%9C%889%E6%97%A5%E5%A4%A7%E9%80%9A%E3%82%8A"
-          },
-          {
-            "title": "7월_9일_대로",
-            "wiki": "ko.wikipedia.org",
-            "url": "https://ko.wikipedia.org/wiki/7%EC%9B%94_9%EC%9D%BC_%EB%8C%80%EB%A1%9C"
-          },
-          {
-            "title": "Avienguda_de_9_de_Julio",
-            "wiki": "oc.wikipedia.org",
-            "url": "https://oc.wikipedia.org/wiki/Avienguda_de_9_de_Julio"
-          },
-          {
-            "title": "Aleja_9_Lipca",
-            "wiki": "pl.wikipedia.org",
-            "url": "https://pl.wikipedia.org/wiki/Aleja_9_Lipca"
-          },
-          {
-            "title": "Wikipedia:Tablica_ogłoszeń/2019-01",
-            "wiki": "pl.wikipedia.org",
-            "url": "https://pl.wikipedia.org/wiki/Wikipedia:Tablica_og%C5%82osze%C5%84/2019-01"
-          },
-          {
-            "title": "بوئنوس_آيرز",
-            "wiki": "ps.wikivoyage.org",
-            "url": "https://ps.wikivoyage.org/wiki/%D8%A8%D9%88%D8%A6%D9%86%D9%88%D8%B3_%D8%A2%D9%8A%D8%B1%D8%B2"
-          },
-          {
-            "title": "Obelisco_de_Buenos_Aires",
-            "wiki": "pt.wikipedia.org",
-            "url": "https://pt.wikipedia.org/wiki/Obelisco_de_Buenos_Aires"
-          },
-          {
-            "title": "Listas_de_cidades_por_país",
-            "wiki": "pt.wikipedia.org",
-            "url": "https://pt.wikipedia.org/wiki/Listas_de_cidades_por_pa%C3%ADs"
-          },
-          {
-            "title": "Lista_orașelor_din_Argentina",
-            "wiki": "ro.wikipedia.org",
-            "url": "https://ro.wikipedia.org/wiki/Lista_ora%C8%99elor_din_Argentina"
-          },
-          {
-            "title": "Авенида_9_де_Хулио",
-            "wiki": "ru.wikipedia.org",
-            "url": "https://ru.wikipedia.org/wiki/%D0%90%D0%B2%D0%B5%D0%BD%D0%B8%D0%B4%D0%B0_9_%D0%B4%D0%B5_%D0%A5%D1%83%D0%BB%D0%B8%D0%BE"
-          },
-          {
-            "title": "Avenija_9._jula",
-            "wiki": "sh.wikipedia.org",
-            "url": "https://sh.wikipedia.org/wiki/Avenija_9._jula"
-          },
-          {
-            "title": "List_of_cities_in_Argentina",
-            "wiki": "simple.wikipedia.org",
-            "url": "https://simple.wikipedia.org/wiki/List_of_cities_in_Argentina"
-          },
-          {
-            "title": "Zoznam_miest_v_Argentíne_podľa_počtu_obyvateľov",
-            "wiki": "sk.wikipedia.org",
-            "url": "https://sk.wikipedia.org/wiki/Zoznam_miest_v_Argent%C3%ADne_pod%C4%BEa_po%C4%8Dtu_obyvate%C4%BEov"
-          },
-          {
-            "title": "Avenija_9._jula",
-            "wiki": "sr.wikipedia.org",
-            "url": "https://sr.wikipedia.org/wiki/Avenija_9._jula"
-          },
-          {
-            "title": "รายชื่อนครในประเทศอาร์เจนตินา",
-            "wiki": "th.wikipedia.org",
-            "url": "https://th.wikipedia.org/wiki/%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B9%83%E0%B8%99%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%97%E0%B8%A8%E0%B8%AD%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B9%80%E0%B8%88%E0%B8%99%E0%B8%95%E0%B8%B4%E0%B8%99%E0%B8%B2"
-          },
-          {
-            "title": "Arhentina",
-            "wiki": "tl.wikipedia.org",
-            "url": "https://tl.wikipedia.org/wiki/Arhentina"
-          },
-          {
-            "title": "Pook_na_urbano",
-            "wiki": "tl.wikipedia.org",
-            "url": "https://tl.wikipedia.org/wiki/Pook_na_urbano"
-          },
-          {
-            "title": "Talaan_ng_mga_lungsod_sa_Arhentina",
-            "wiki": "tl.wikipedia.org",
-            "url": "https://tl.wikipedia.org/wiki/Talaan_ng_mga_lungsod_sa_Arhentina"
-          },
-          {
-            "title": "Padron:Mga_pinakamalaking_lungsod_ng_Arhentina",
-            "wiki": "tl.wikipedia.org",
-            "url": "https://tl.wikipedia.org/wiki/Padron:Mga_pinakamalaking_lungsod_ng_Arhentina"
-          },
-          {
-            "title": "Arjantin'deki_şehirler_listesi",
-            "wiki": "tr.wikipedia.org",
-            "url": "https://tr.wikipedia.org/wiki/Arjantin%27deki_%C5%9Fehirler_listesi"
-          },
-          {
-            "title": "Вулиця_9_Липня",
-            "wiki": "uk.wikipedia.org",
-            "url": "https://uk.wikipedia.org/wiki/%D0%92%D1%83%D0%BB%D0%B8%D1%86%D1%8F_9_%D0%9B%D0%B8%D0%BF%D0%BD%D1%8F"
-          },
-          {
-            "title": "شہروں_کی_فہرستیں_بلحاظ_ملک",
-            "wiki": "ur.wikipedia.org",
-            "url": "https://ur.wikipedia.org/wiki/%D8%B4%DB%81%D8%B1%D9%88%DA%BA_%DA%A9%DB%8C_%D9%81%DB%81%D8%B1%D8%B3%D8%AA%DB%8C%DA%BA_%D8%A8%D9%84%D8%AD%D8%A7%D8%B8_%D9%85%D9%84%DA%A9"
-          },
-          {
-            "title": "ارجنٹائن_کے_شہروں_کی_فہرست",
-            "wiki": "ur.wikipedia.org",
-            "url": "https://ur.wikipedia.org/wiki/%D8%A7%D8%B1%D8%AC%D9%86%D9%B9%D8%A7%D8%A6%D9%86_%DA%A9%DB%92_%D8%B4%DB%81%D8%B1%D9%88%DA%BA_%DA%A9%DB%8C_%D9%81%DB%81%D8%B1%D8%B3%D8%AA"
-          },
-          {
-            "title": "Đại_lộ_9_de_Julio",
-            "wiki": "vi.wikipedia.org",
-            "url": "https://vi.wikipedia.org/wiki/%C4%90%E1%BA%A1i_l%E1%BB%99_9_de_Julio"
-          },
-          {
-            "title": "七月九日大道",
-            "wiki": "zh.wikipedia.org",
-            "url": "https://zh.wikipedia.org/wiki/%E4%B8%83%E6%9C%88%E4%B9%9D%E6%97%A5%E5%A4%A7%E9%81%93"
-          },
-          {
-            "title": "布宜诺斯艾利斯",
-            "wiki": "zh.wikivoyage.org",
-            "url": "https://zh.wikivoyage.org/wiki/%E5%B8%83%E5%AE%9C%E8%AF%BA%E6%96%AF%E8%89%BE%E5%88%A9%E6%96%AF"
-          }
-        ]
-      },
-      "-16": {
-        "ns": 6,
-        "title": "File:Ferrari 812 GTS in Kuala Lumpur, Malaysia.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": [
-          {
-            "title": "Ferrari_812_Superfast",
-            "wiki": "en.wikipedia.org",
-            "url": "https://en.wikipedia.org/wiki/Ferrari_812_Superfast"
-          }
-        ]
-      },
-      "-17": {
-        "ns": 6,
-        "title": "File:Perdana Botanical Garden in May 2020 01 (cropped).jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": [
-          {
-            "title": "Talk:Kuala_Lumpur/Botanical_Garden",
-            "wiki": "en.wikivoyage.org",
-            "url": "https://en.wikivoyage.org/wiki/Talk:Kuala_Lumpur/Botanical_Garden"
-          }
-        ]
-      },
-      "-18": {
-        "ns": 6,
-        "title": "File:Lake Gardens, Kuala Lumpur 03 (cropped).jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": [
-          {
-            "title": "Talk:Kuala_Lumpur/Botanical_Garden",
-            "wiki": "en.wikivoyage.org",
-            "url": "https://en.wikivoyage.org/wiki/Talk:Kuala_Lumpur/Botanical_Garden"
-          }
-        ]
-      },
-      "-19": {
-        "ns": 6,
-        "title": "File:Masjid Jamek in May 2020 02.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-20": {
-        "ns": 6,
-        "title": "File:Kwai Chai Hong in May 2020.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-21": {
-        "ns": 6,
-        "title": "File:Perdana Botanical Garden in May 2020 01.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": [
-          {
-            "title": "Q12061078",
-            "wiki": "www.wikidata.org",
-            "url": "https://www.wikidata.org/wiki/Q12061078"
-          }
-        ]
-      },
-      "-22": {
-        "ns": 6,
-        "title": "File:Masjid Jamek in May 2020 01.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-23": {
-        "ns": 6,
-        "title": "File:Tung Shin Hospital during Covid-19 in May 2020.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": [
-          {
-            "title": "2020_Malaysia_movement_control_order",
-            "wiki": "en.wikipedia.org",
-            "url": "https://en.wikipedia.org/wiki/2020_Malaysia_movement_control_order"
-          }
-        ]
-      },
-      "-24": {
-        "ns": 6,
-        "title": "File:Exchange 106, Kuala Lumpur in May 2020 01.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": [
-          {
-            "title": "The_Exchange_106",
-            "wiki": "en.wikipedia.org",
-            "url": "https://en.wikipedia.org/wiki/The_Exchange_106"
-          },
-          {
-            "title": "The_Exchange_106",
-            "wiki": "fr.wikipedia.org",
-            "url": "https://fr.wikipedia.org/wiki/The_Exchange_106"
-          },
-          {
-            "title": "The_Exchange_106",
-            "wiki": "pt.wikipedia.org",
-            "url": "https://pt.wikipedia.org/wiki/The_Exchange_106"
-          },
-          {
-            "title": "Q27670200",
-            "wiki": "www.wikidata.org",
-            "url": "https://www.wikidata.org/wiki/Q27670200"
-          }
-        ]
-      },
-      "-25": {
-        "ns": 6,
-        "title": "File:Covid-19 contact tracing form at Publika Kuala Lumpur.png",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-26": {
-        "ns": 6,
-        "title": "File:Mousedeer Garden, Kuala Lumpur in May 2020 03.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-27": {
-        "ns": 6,
-        "title": "File:Sunken Garde, Perdana Botanical Gardens in May 2020.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-28": {
-        "ns": 6,
-        "title": "File:Mousedeer Garden, Kuala Lumpur in May 2020 01.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": [
-          {
-            "title": "Kuala_Lumpur/Botanical_Garden",
-            "wiki": "en.wikivoyage.org",
-            "url": "https://en.wikivoyage.org/wiki/Kuala_Lumpur/Botanical_Garden"
-          }
-        ]
-      },
-      "-29": {
-        "ns": 6,
-        "title": "File:Kuala Lumpur Bird Park in May 2020.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": [
-          {
-            "title": "Kuala_Lumpur/Botanical_Garden",
-            "wiki": "en.wikivoyage.org",
-            "url": "https://en.wikivoyage.org/wiki/Kuala_Lumpur/Botanical_Garden"
-          }
-        ]
-      },
-      "-30": {
-        "ns": 6,
-        "title": "File:Mousedeer Garden, Kuala Lumpur in May 2020 02.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-31": {
-        "ns": 6,
-        "title": "File:Sunset over Kuala Lumpur in May 2020.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-32": {
-        "ns": 6,
-        "title": "File:Plaza Arkadia, Kuala Lumpur in May 2020.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-33": {
-        "ns": 6,
-        "title": "File:Toilets during Covid-19 pandemic in Kuala Lumpur.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-34": {
-        "ns": 6,
-        "title": "File:Jalan Alor Street Art in May 2020.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": [
-          {
-            "title": "KL_sightseeing_walk",
-            "wiki": "en.wikivoyage.org",
-            "url": "https://en.wikivoyage.org/wiki/KL_sightseeing_walk"
-          }
-        ]
-      },
-      "-35": {
-        "ns": 6,
-        "title": "File:Exchange 106, Kuala Lumpur in May 2020 02.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-36": {
-        "ns": 6,
-        "title": "File:Menara Prudential, TRX in May 2020.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-37": {
-        "ns": 6,
-        "title": "File:Bukit Bintang City Centre (BBCC) in May 2020.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": [
-          {
-            "title": "Q12684392",
-            "wiki": "www.wikidata.org",
-            "url": "https://www.wikidata.org/wiki/Q12684392"
-          }
-        ]
-      },
-      "-38": {
-        "ns": 6,
-        "title": "File:Construction halted for PNB 118 during MCO in May 2020 04.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-39": {
-        "ns": 6,
-        "title": "File:Construction halted for PNB 118 during MCO in May 2020 03.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-40": {
-        "ns": 6,
-        "title": "File:Construction halted for PNB 118 during MCO in May 2020 02.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-41": {
-        "ns": 6,
-        "title": "File:Construction halted for PNB 118 during MCO in May 2020 01.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-42": {
-        "ns": 6,
-        "title": "File:Kwai Chai Hong, Kuala Lumpur in May 2020 06.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-43": {
-        "ns": 6,
-        "title": "File:Kwai Chai Hong, Kuala Lumpur in May 2020 05.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-44": {
-        "ns": 6,
-        "title": "File:Kwai Chai Hong, Kuala Lumpur in May 2020 04.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": [
-          {
-            "title": "Kuala_Lumpur/Central",
-            "wiki": "en.wikivoyage.org",
-            "url": "https://en.wikivoyage.org/wiki/Kuala_Lumpur/Central"
-          },
-          {
-            "title": "KL_sightseeing_walk",
-            "wiki": "en.wikivoyage.org",
-            "url": "https://en.wikivoyage.org/wiki/KL_sightseeing_walk"
-          },
-          {
-            "title": "Q93494466",
-            "wiki": "www.wikidata.org",
-            "url": "https://www.wikidata.org/wiki/Q93494466"
-          }
-        ]
-      },
-      "-45": {
-        "ns": 6,
-        "title": "File:Kwai Chai Hong, Kuala Lumpur in May 2020 03.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
-      },
-      "-46": {
-        "ns": 6,
-        "title": "File:Kwai Chai Hong, Kuala Lumpur in May 2020 02.jpg",
-        "missing": "",
-        "known": "",
-        "globalusage": []
       }
     }
   }
