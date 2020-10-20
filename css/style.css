@@ -116,8 +116,8 @@ app-chart {
   color: white;
 }
 
-.success {
-  background-color: green;
+.fail {
+  background-color: red;
   color: white;
 }
 /* #endregion */

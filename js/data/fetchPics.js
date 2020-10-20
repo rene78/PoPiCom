@@ -78,7 +78,12 @@ export default new class FetchPics { //"new", because we want to export an insta
         })
         .catch(error => {
           console.log(error);
-          // removeSpinner(); //hide animation
+          const modalObj = {
+            text: error,
+            type: "fail"
+          }
+          self.pubsub.publish('InfoMessage', modalObj, userName);
+          removeSpinner(); //hide animation
         });
       //-----------------------------------------------------------------------
 
@@ -122,7 +127,12 @@ export default new class FetchPics { //"new", because we want to export an insta
             })
             .catch(error => {
               console.log(error);
-              // removeSpinner(); //hide animation
+              const modalObj = {
+                text: error,
+                type: "fail"
+              }
+              self.pubsub.publish('InfoMessage', modalObj, userName);
+              removeSpinner(); //hide animation
             });
         }
 
