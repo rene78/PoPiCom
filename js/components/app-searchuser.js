@@ -101,7 +101,7 @@ export default class appSearchUser extends RootElement {
         cache: false
       },
       placeHolder: "Commons User Name...",
-      threshold: 3,                        // Min. Chars length to start Engine | (Optional)
+      // threshold: 2,                        // Min. Chars length to start Engine | (Optional)
       debounce: 300,                       // Post duration for engine to start | (Optional)
       searchEngine: "strict",
       highlight: true,
@@ -130,7 +130,7 @@ export default class appSearchUser extends RootElement {
         // Change placeholder with the selected value
         document.querySelector("#autoComplete").setAttribute("placeholder", userName);
         // Concole log autoComplete data feedback
-        console.log(feedback);
+        // console.log(feedback);
       }
     });
 
