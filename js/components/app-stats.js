@@ -13,7 +13,7 @@ export default class appStats extends RootElement {
 
   renderData(meta) {
     this.innerHTML = `
-      <p id="app-stats-text">User <b>${meta.userName}</b> uploaded <b>${meta.nPics}</b> picture${meta.nPics !== 1 ? "s" : ""} which ${meta.nPics !== 1 ? "are" : "is"} used on <b>${meta.nUsages}</b> Wikimedia page${meta.nUsages !== 1 ? "s" : ""}</p>
+      <p id="app-stats-text">User <b>${decodeURI(meta.userName)}</b> uploaded <b>${meta.nPics}</b> picture${meta.nPics !== 1 ? "s" : ""} which ${meta.nPics !== 1 ? "are" : "is"} used on <b>${meta.nUsages}</b> Wikimedia page${meta.nUsages !== 1 ? "s" : ""}</p>
     `;
   }
 }
