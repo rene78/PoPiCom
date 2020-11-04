@@ -2,7 +2,7 @@
 [![Favicon](img/android-chrome-192x192.png)](https://rene78.github.io/PopComPics/)
 
 # Purpose
-This web app shows you how many times each picture of a certain user has been used on all Wikimedia projects.
+This web app shows you how many times each picture of a certain user has been utilized on all Wikimedia projects.
 ![Picture of App][screenshot]
 
 [screenshot]: img/mockup.png "Picture of the App"
