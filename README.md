@@ -8,4 +8,4 @@ PopComPics (**Pop**ular **Com**mons **Pics**) shows you how many times each pict
 [screenshot]: img/mockup.png "Picture of the App"
 
 # Technical Details
-I used Webcomponents with the pubsub pattern according to [Peter Carroll's repository](https://github.com/petercz1/todo_no_frameworks).Thanks very much, Peter! Admittedly pubsub doesn't really make sense on such a simple app, but I just wanted to get a better understanding on how to set it up. A disadvantage of this approach seems to be that the array received from the API call has to be traversed multiple times in order to get all needed infos for each web component - not very efficient.
+I used Webcomponents with the pubsub pattern according to [Peter Carroll's repository](https://github.com/petercz1/todo_no_frameworks). Thanks very much, Peter! Admittedly pubsub doesn't really make sense on such a simple app, but I just wanted to get a better understanding on how to set it up. A disadvantage of this approach seems to be that the array received from the API call has to be traversed multiple times in order to get all needed infos for each web component - not very efficient.
