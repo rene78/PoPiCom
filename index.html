@@ -40,8 +40,10 @@
 </head>
 
 <body>
-  <!-- <button id="toggle-spinner">Toggle Spinner</button> -->
-  <div id="loading-animation" class="hide"></div>
+  <div class="progress">
+    <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="--value:0"></div>
+    <div class="infotext"></div>
+  </div>
   <app-modal></app-modal>
   <div id="content">
     <app-searchuser></app-searchuser>

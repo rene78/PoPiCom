@@ -12,6 +12,8 @@ export default new class FetchPics { //"new", because we want to export an insta
     // console.log("You entered this text: " + userName);
     const self = this; //used to bind "this" to function
 
+    let circBar = document.querySelector("div[role='progressbar']");
+
     const pageIdsArr = [];
     const hardPicLimit = 44; //Set to 22000 pictures (22000pics/500picsPerQuery=44)
     let hardPicLimitCounter = 1;
@@ -61,6 +63,8 @@ export default new class FetchPics { //"new", because we want to export an insta
             params.aicontinue = response.continue.aicontinue;//update aicontinue in order to fetch remaining entries
             // console.log(params);
             fetchElements();
+            document.querySelector(".infotext").innerText = "Details of " + hardPicLimitCounter * 500 + " pictures have been downloaded";
+            circBar.style.setProperty('--value', hardPicLimitCounter * 2);//just a pseudo value, because no total numbers of pics available at this point
             hardPicLimitCounter++;
             if (hardPicLimitCounter === hardPicLimit) {
               // console.warn("User has more than 22000 pictures. Only 22000 can be shown in this app!");
@@ -103,6 +107,7 @@ export default new class FetchPics { //"new", because we want to export an insta
 
         //Split into subarrays of 50 elements each.
         const namesArr2D = [];
+        const nPicturesOverall = pageIdsArr.length;
 
         while (pageIdsArr.length) namesArr2D.push(pageIdsArr.splice(0, 50));
         // console.log(namesArr2D);
@@ -122,6 +127,7 @@ export default new class FetchPics { //"new", because we want to export an insta
             .then(response => {
               if (APIResponseCounter == namesArr2D.length - 1) finalLoop = true; //Set to true on final loop
               APIResponseCounter++;
+              updateCircularProgressBar(APIResponseCounter * 50)
               // console.log(finalLoop);
               extractTitleAndCount(response, finalLoop)/*console.log(response);*/
             })
@@ -167,10 +173,22 @@ export default new class FetchPics { //"new", because we want to export an insta
             self.pubsub.publish('PicsDownload', titleCountObj, userName);
           }
         }
+
+        function updateCircularProgressBar(nPicturesAlreadyLoaded) {
+          //calculate loading progress in percent
+          // console.log("nPicturesOverall: " + nPicturesOverall);
+          // console.log("nPicturesAlreadyLoaded: " + nPicturesAlreadyLoaded);
+          let progressPercent = 100 * nPicturesAlreadyLoaded / nPicturesOverall;
+          // console.log(progressPercent);
+          progressPercent = Math.round(progressPercent);
+          if (progressPercent > 100) progressPercent = 100; //reset in case larger 100%
+          circBar.style.setProperty('--value', progressPercent);
+          document.querySelector(".infotext").innerText = "Usage count for " + nPicturesAlreadyLoaded + " out of " + nPicturesOverall + " pictures has been downloaded";
+        }
       }
     }
 
-    const spinner = document.querySelector("#loading-animation");
+    const spinner = document.querySelector(".progress");
     const content = document.querySelector("#content");
     function addSpinner() {
       spinner.classList.remove("hide");
