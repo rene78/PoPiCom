@@ -462,6 +462,8 @@ td img {
   position: relative;
   width: 100%;
   height: 100%;
+  /* If very long pictures are displayed cut them off at display bottom: */
+  overflow: hidden;
 }
 
 #tooltip-container {
