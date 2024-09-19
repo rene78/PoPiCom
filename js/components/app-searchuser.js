@@ -54,8 +54,6 @@ export default class appSearchUser extends RootElement {
         <p><b>Pop</b>ular <b>Com</b>mons <b>Pics</b> will tell you just that! Simply enter your Wikimedia Commons user
         name and get a list with all your images and the usage count for each. Furthermore there is a chart with your
         Top 10 most used pictures.</p>
-        <p>If you find this tool useful you can donate some Satoshis to me &#128527;.</p>
-        <div class="tallypay" data-user_name="rene78" data-button="Donate via Lightning"></div>
       </div>
     </div>
 
@@ -164,7 +162,7 @@ export default class appSearchUser extends RootElement {
     }
 
     //Define all elements that can toggle display of infobox
-    const elementsThatToggleInfobox = document.querySelectorAll(".close-infobox-button, .info-triangle, .tallypay");
+    const elementsThatToggleInfobox = document.querySelectorAll(".close-infobox-button, .info-triangle");
     // console.log(elementsThatToggleInfobox);
 
     elementsThatToggleInfobox.forEach(function (elem) {
